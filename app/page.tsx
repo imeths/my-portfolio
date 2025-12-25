@@ -1,5 +1,7 @@
 import React from "react";
-import Navbar from "@/components/navbar"; 
+import Navbar from "@/components/navbar";
+import TiltHero from "@/components/TiltHero";
+import Testimonials from "@/components/Testimonials";
 import { 
   ArrowRight, BarChart2, Globe, Megaphone, TrendingUp, Search, Layers, Star, 
   Mail, MapPin, Phone, CheckCircle, ExternalLink, ShieldCheck, Linkedin, Github 
@@ -10,14 +12,14 @@ export default function Home() {
     <main className="min-h-screen bg-white font-sans overflow-x-hidden">
       <Navbar />
 
-      {/* --- HERO SECTION (MOBILE OPTIMIZED) --- */}
+{/* --- HERO SECTION (Interactive 3D) --- */}
       <section id="home" className="relative pt-24 pb-12 lg:pt-40 lg:pb-28 px-6">
         {/* Background Blob (Desktop Only) */}
         <div className="absolute top-0 right-0 w-[45%] h-[85%] bg-gradient-to-bl from-cyan-50 via-blue-50 to-white rounded-bl-[100px] -z-10 hidden lg:block" />
 
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           
-          {/* Left Content */}
+          {/* Left Content (Text) */}
           <div className="max-w-2xl text-center lg:text-left">
             <span className="text-blue-600 font-bold tracking-wider text-sm uppercase mb-4 block">Digital Marketing Expert</span>
             <h1 className="text-4xl lg:text-7xl font-extrabold text-slate-900 leading-tight mb-6">
@@ -37,52 +39,10 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right Image & Floating Cards */}
-          <div className="relative flex justify-center lg:justify-end mt-12 lg:mt-0">
-            <div className="relative z-10 w-full max-w-[350px] lg:max-w-md">
-                
-                {/* Main Image */}
-                <img 
-                  src="https://i.ibb.co/WN0t7RLz/Imeth01.png" 
-                  alt="Imeth Sahabandu" 
-                  className="rounded-b-full rounded-t-[40px] shadow-2xl border-4 border-white object-cover h-[400px] lg:h-[500px] w-full"
-                />
-                
-                {/* Card 1: ROI (Mobile: Bottom Center | Desktop: Floating Left) */}
-                <div className="absolute -bottom-6 left-0 right-0 mx-auto w-max md:bottom-8 md:right-auto md:-left-12 bg-white p-3 md:p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3 animate-bounce" style={{ animationDuration: '3s' }}>
-                  <div className="bg-green-100 p-2 md:p-3 rounded-full text-green-600">
-                    <TrendingUp size={20} />
-                  </div>
-                  <div>
-                    <p className="text-slate-500 text-[10px] font-bold uppercase tracking-wider">ROI Generated</p>
-                    <p className="text-slate-900 font-bold text-base md:text-lg">300% Avg</p>
-                  </div>
-                </div>
+          {/* Right Content (3D Tilt Component) */}
+          {/* We simply place the component here. It handles its own size and responsiveness. */}
+          <TiltHero />
 
-                {/* Card 2: Rating (Mobile: Top Right inside | Desktop: Floating Right outside) */}
-                <div className="absolute top-1/2 right-4 md:top-45 md:-right-10 bg-white p-2 md:p-3 pr-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-2 animate-bounce" style={{ animationDuration: '4s' }}>
-                   <div className="bg-yellow-100 p-1.5 rounded-full text-yellow-500">
-                      <Star size={14} fill="currentColor" />
-                   </div>
-                   <div>
-                      <p className="text-slate-900 font-bold text-xs md:text-sm">4.9 Rating</p>
-                      <p className="text-slate-400 text-[10px]">from 20+ clients</p>
-                   </div>
-                </div>
-
-                {/* Card 3: Hidden on Mobile to save space */}
-                <div className="hidden md:flex absolute top-16 -left-16 bg-white p-3 rounded-2xl shadow-xl border border-slate-100 items-center gap-3 animate-bounce" style={{ animationDuration: '5s' }}>
-                   <div className="bg-blue-100 p-2 rounded-full text-blue-600">
-                      <ShieldCheck size={20} />
-                   </div>
-                   <div>
-                      <p className="text-slate-900 font-bold text-sm">Certified</p>
-                      <p className="text-slate-400 text-[10px]">AEO Expert</p>
-                   </div>
-                </div>
-
-            </div>
-          </div>
         </div>
       </section>
 
@@ -147,15 +107,8 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="p-6 bg-slate-50 border border-slate-100 rounded-2xl">
-              <p className="italic text-slate-600">"Imeth combines technical precision with creative flair. He doesn't just deliver a service; he delivers a result."</p>
-              <div className="mt-4 flex items-center gap-3">
-                 <div className="w-10 h-10 bg-slate-300 rounded-full"></div>
-                 <div>
-                    <p className="text-slate-900 font-bold text-sm">Client Name</p>
-                    <p className="text-slate-500 text-xs">CEO, Previous Company</p>
-                 </div>
-              </div>
+            <div className="mt-8">
+               <Testimonials />
             </div>
           </div>
         </div>
