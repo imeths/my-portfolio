@@ -1,31 +1,34 @@
 import React from "react";
 import Navbar from "@/components/navbar"; 
-import { ArrowRight, BarChart2, Globe, Megaphone, TrendingUp, Search, Layers, Star, Mail, MapPin, Phone, CheckCircle, ExternalLink, Users, ShieldCheck } from "lucide-react";
+import { 
+  ArrowRight, BarChart2, Globe, Megaphone, TrendingUp, Search, Layers, Star, 
+  Mail, MapPin, Phone, CheckCircle, ExternalLink, ShieldCheck, Linkedin, Github 
+} from "lucide-react";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-white font-sans overflow-x-hidden">
       <Navbar />
 
-      {/* --- HERO SECTION --- */}
-      <section id="home" className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 px-6">
-        {/* Background Decorative Blob */}
+      {/* --- HERO SECTION (MOBILE OPTIMIZED) --- */}
+      <section id="home" className="relative pt-24 pb-12 lg:pt-40 lg:pb-28 px-6">
+        {/* Background Blob (Desktop Only) */}
         <div className="absolute top-0 right-0 w-[45%] h-[85%] bg-gradient-to-bl from-cyan-50 via-blue-50 to-white rounded-bl-[100px] -z-10 hidden lg:block" />
 
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           
           {/* Left Content */}
-          <div className="max-w-2xl">
+          <div className="max-w-2xl text-center lg:text-left">
             <span className="text-blue-600 font-bold tracking-wider text-sm uppercase mb-4 block">Digital Marketing Expert</span>
-            <h1 className="text-5xl lg:text-7xl font-extrabold text-slate-900 leading-[1.1] mb-6">
+            <h1 className="text-4xl lg:text-7xl font-extrabold text-slate-900 leading-tight mb-6">
               Build Your Brand <br />
               The <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Right Way</span>
             </h1>
-            <p className="text-lg text-slate-500 mb-8 max-w-lg leading-relaxed">
+            <p className="text-base lg:text-lg text-slate-500 mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
               I'm Imeth Sahabandu. I help businesses bridge the gap between creative design, technical development, and revenue growth.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <a href="#contact" className="bg-blue-600 text-white px-8 py-4 rounded-full font-bold shadow-lg shadow-blue-600/30 hover:bg-blue-700 transition hover:-translate-y-1">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <a href="#contact" className="bg-blue-600 text-white px-8 py-4 rounded-full font-bold shadow-lg shadow-blue-600/30 hover:bg-blue-700 transition">
                 Let's Talk
               </a>
               <a href="#case-studies" className="px-8 py-4 rounded-full font-bold text-slate-600 border border-slate-200 hover:border-blue-600 hover:text-blue-600 transition">
@@ -35,40 +38,40 @@ export default function Home() {
           </div>
 
           {/* Right Image & Floating Cards */}
-          <div className="relative flex justify-center lg:justify-end mt-10 lg:mt-0">
-            <div className="relative z-10 w-[80%] max-w-md">
+          <div className="relative flex justify-center lg:justify-end mt-12 lg:mt-0">
+            <div className="relative z-10 w-full max-w-[350px] lg:max-w-md">
                 
                 {/* Main Image */}
                 <img 
                   src="https://i.ibb.co/WN0t7RLz/Imeth01.png" 
                   alt="Imeth Sahabandu" 
-                  className="rounded-b-full rounded-t-[40px] shadow-2xl border-4 border-white object-cover h-[500px] w-full"
+                  className="rounded-b-full rounded-t-[40px] shadow-2xl border-4 border-white object-cover h-[400px] lg:h-[500px] w-full"
                 />
                 
-                {/* Float Card 1: ROI (Bottom Left) */}
-                <div className="absolute bottom-8 -left-8 md:-left-12 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3 animate-bounce" style={{ animationDuration: '3s' }}>
-                  <div className="bg-green-100 p-3 rounded-full text-green-600">
+                {/* Card 1: ROI (Mobile: Bottom Center | Desktop: Floating Left) */}
+                <div className="absolute -bottom-6 left-0 right-0 mx-auto w-max md:bottom-8 md:right-auto md:-left-12 bg-white p-3 md:p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3 animate-bounce" style={{ animationDuration: '3s' }}>
+                  <div className="bg-green-100 p-2 md:p-3 rounded-full text-green-600">
                     <TrendingUp size={20} />
                   </div>
                   <div>
                     <p className="text-slate-500 text-[10px] font-bold uppercase tracking-wider">ROI Generated</p>
-                    <p className="text-slate-900 font-bold text-lg">300% Avg</p>
+                    <p className="text-slate-900 font-bold text-base md:text-lg">300% Avg</p>
                   </div>
                 </div>
 
-                {/* Float Card 2: Rating (Top Right) */}
-                <div className="absolute top-50 -right-6 md:-right-10 bg-white p-3 pr-5 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3 animate-bounce" style={{ animationDuration: '4s' }}>
-                   <div className="bg-yellow-100 p-2 rounded-full text-yellow-500">
-                      <Star size={18} fill="currentColor" />
+                {/* Card 2: Rating (Mobile: Top Right inside | Desktop: Floating Right outside) */}
+                <div className="absolute top-1/2 right-4 md:top-45 md:-right-10 bg-white p-2 md:p-3 pr-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-2 animate-bounce" style={{ animationDuration: '4s' }}>
+                   <div className="bg-yellow-100 p-1.5 rounded-full text-yellow-500">
+                      <Star size={14} fill="currentColor" />
                    </div>
                    <div>
-                      <p className="text-slate-900 font-bold text-sm">4.9 Rating</p>
-                      <p className="text-slate-400 text-[10px]">From 50+ Clients</p>
+                      <p className="text-slate-900 font-bold text-xs md:text-sm">4.9 Rating</p>
+                      <p className="text-slate-400 text-[10px]">from 20+ clients</p>
                    </div>
                 </div>
 
-                {/* Float Card 3: Experience/Tech (Middle Left) */}
-                <div className="absolute top-16 -left-10 md:-left-16 bg-white p-3 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3 animate-bounce" style={{ animationDuration: '5s' }}>
+                {/* Card 3: Hidden on Mobile to save space */}
+                <div className="hidden md:flex absolute top-16 -left-16 bg-white p-3 rounded-2xl shadow-xl border border-slate-100 items-center gap-3 animate-bounce" style={{ animationDuration: '5s' }}>
                    <div className="bg-blue-100 p-2 rounded-full text-blue-600">
                       <ShieldCheck size={20} />
                    </div>
@@ -172,7 +175,6 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8">
             {/* Project 1: SELTech */}
             <div className="group relative h-[400px] rounded-3xl overflow-hidden border border-slate-700 hover:border-blue-500 transition-all duration-500">
-               {/* Background Image Placeholder */}
                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent z-10"></div>
                <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-700" />
                
@@ -231,57 +233,80 @@ export default function Home() {
         </div>
       </section>
 
-      {/* --- CONTACT SECTION --- */}
-      <section id="contact" className="py-24 px-6 bg-slate-50">
-        <div className="max-w-5xl mx-auto bg-white rounded-[40px] shadow-xl overflow-hidden border border-slate-100">
+      {/* --- CONTACT SECTION (MOBILE FIXED) --- */}
+      <section id="contact" className="py-12 md:py-24 px-4 md:px-6 bg-slate-50">
+        <div className="max-w-5xl mx-auto bg-white rounded-3xl md:rounded-[40px] shadow-xl overflow-hidden border border-slate-100">
           <div className="grid md:grid-cols-2">
             
-            {/* Contact Info (Left) */}
-            <div className="bg-blue-600 p-12 text-white flex flex-col justify-between relative overflow-hidden">
-               <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-16 -mt-16 pointer-events-none"></div>
-               <div className="absolute bottom-0 left-0 w-40 h-40 bg-white/10 rounded-full -ml-10 -mb-10 pointer-events-none"></div>
+            {/* Contact Info (Left - Blue Card) */}
+            <div className="bg-blue-600 p-6 md:p-12 text-white flex flex-col justify-between relative overflow-hidden">
+               {/* Background Decorative Circles */}
+               <div className="absolute top-0 right-0 w-32 h-32 md:w-64 md:h-64 bg-white/10 rounded-full -mr-10 -mt-10 md:-mr-16 md:-mt-16 pointer-events-none"></div>
+               <div className="absolute bottom-0 left-0 w-24 h-24 md:w-40 md:h-40 bg-white/10 rounded-full -ml-8 -mb-8 md:-ml-10 md:-mb-10 pointer-events-none"></div>
                
                <div>
-                 <h3 className="text-3xl font-bold mb-6">Let's discuss your project</h3>
-                 <p className="text-blue-100 mb-8 leading-relaxed">
+                 <h3 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 leading-tight">Let's discuss your project</h3>
+                 <p className="text-blue-100 mb-8 leading-relaxed text-sm md:text-base">
                    Interested in working together? Fill out the form or reach out directly. I'm always open to discussing new ideas.
                  </p>
                  
                  <div className="space-y-6">
-                   <div className="flex items-center gap-4">
-                     <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center"><Mail size={18}/></div>
-                     <div>
-                       <p className="text-blue-200 text-xs uppercase font-bold">Email Me</p>
-                       <p className="font-medium">imeth.sahabandu@gmail.com</p>
+                   {/* Email Item */}
+                   <div className="flex items-start gap-4">
+                     <div className="w-10 h-10 min-w-[2.5rem] bg-blue-500 rounded-full flex items-center justify-center"><Mail size={18}/></div>
+                     <div className="overflow-hidden">
+                       <p className="text-blue-200 text-xs uppercase font-bold tracking-wider">Email Me</p>
+                       <p className="font-medium break-words text-sm md:text-base">imeth.sahabandu@gmail.com</p>
                      </div>
                    </div>
+
+                   {/* Phone Item */}
                    <div className="flex items-center gap-4">
-                     <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center"><Phone size={18}/></div>
+                     <div className="w-10 h-10 min-w-[2.5rem] bg-blue-500 rounded-full flex items-center justify-center"><Phone size={18}/></div>
                      <div>
-                       <p className="text-blue-200 text-xs uppercase font-bold">Call Me</p>
-                       <p className="font-medium">+94 77 696 4553</p>
+                       <p className="text-blue-200 text-xs uppercase font-bold tracking-wider">Call Me</p>
+                       <p className="font-medium text-sm md:text-base">+94 77 696 4553</p>
                      </div>
                    </div>
+
+                   {/* Location Item */}
                    <div className="flex items-center gap-4">
-                     <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center"><MapPin size={18}/></div>
+                     <div className="w-10 h-10 min-w-[2.5rem] bg-blue-500 rounded-full flex items-center justify-center"><MapPin size={18}/></div>
                      <div>
-                       <p className="text-blue-200 text-xs uppercase font-bold">Location</p>
-                       <p className="font-medium">Colombo, Sri Lanka</p>
+                       <p className="text-blue-200 text-xs uppercase font-bold tracking-wider">Location</p>
+                       <p className="font-medium text-sm md:text-base">Colombo, Sri Lanka</p>
                      </div>
                    </div>
                  </div>
                </div>
 
-               <div className="mt-12 flex gap-4">
-                 {/* Social Icons Placeholder */}
-                 <div className="w-10 h-10 border border-blue-400 rounded-full flex items-center justify-center hover:bg-white hover:text-blue-600 transition cursor-pointer">In</div>
-                 <div className="w-10 h-10 border border-blue-400 rounded-full flex items-center justify-center hover:bg-white hover:text-blue-600 transition cursor-pointer">X</div>
+               {/* Social Icons (LinkedIn & GitHub) */}
+               <div className="mt-10 md:mt-12 flex gap-4">
+                 {/* LinkedIn */}
+                 <a 
+                   href="https://www.linkedin.com/in/imeths" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   className="w-10 h-10 border border-blue-400 rounded-full flex items-center justify-center hover:bg-white hover:text-blue-600 transition hover:-translate-y-1"
+                 >
+                   <Linkedin size={20} />
+                 </a>
+
+                 {/* GitHub */}
+                 <a 
+                   href="https://github.com/imeths" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   className="w-10 h-10 border border-blue-400 rounded-full flex items-center justify-center hover:bg-white hover:text-blue-600 transition hover:-translate-y-1"
+                 >
+                   <Github size={20} />
+                 </a>
                </div>
             </div>
 
-            {/* Contact Form (Right) */}
-            <div className="p-12">
-               <form className="space-y-6">
+            {/* Contact Form (Right - White Side) */}
+            <div className="p-6 md:p-12 bg-white">
+               <form className="space-y-4 md:space-y-6">
                  <div>
                    <label className="block text-sm font-bold text-slate-700 mb-2">Name</label>
                    <input type="text" placeholder="John Doe" className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition" />
@@ -294,7 +319,7 @@ export default function Home() {
                    <label className="block text-sm font-bold text-slate-700 mb-2">Message</label>
                    <textarea rows={4} placeholder="Tell me about your project..." className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition"></textarea>
                  </div>
-                 <button type="button" className="w-full bg-slate-900 text-white font-bold py-4 rounded-lg hover:bg-blue-600 transition shadow-lg">
+                 <button type="button" className="w-full bg-slate-900 text-white font-bold py-4 rounded-lg hover:bg-blue-600 transition shadow-lg hover:-translate-y-1">
                    Send Message
                  </button>
                </form>

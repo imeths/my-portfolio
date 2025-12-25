@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/navbar"; // Import the Navbar
+import Navbar from "@/components/navbar"; 
+import Cursor from "@/components/Cursor"; // <--- 1. Import this
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Imeth Sahabandu - Portfolio",
-  description: "Showcasing my work",
+  title: "Imeth Sahabandu | Portfolio",
+  description: "Digital Marketing Expert",
 };
 
 export default function RootLayout({
@@ -18,7 +19,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />  {/* Add Navbar here */}
+        <Cursor />  {/* <--- 2. Add this line here */}
+        <Navbar />  {/* (You might already have this here or in page.tsx) */}
         {children}
       </body>
     </html>
